@@ -7,15 +7,15 @@ import xmail from '../../assets/fi_5969020.png'
 const Footer = () => {
     return (
         <div className='bg-[#001931] px-20 py-9'>
-            <div className="flex justify-between items-center">
-                <div className="">
+            <div className="md:flex md:justify-between md:items-center flex-row">
+                <div className="md:block hidden">
                     <a className="flex items-center text-xl bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-transparent bg-clip-text">
                         <img className='w-10 h-10' 
                         src={logo} alt="" /> HERO.IO</a>
                 </div>
-                <div className="">
-                    <p className='font-medium text-xl text-white'>Social Links</p>
-                    <div className="m-2 flex items-center">
+                <div className="md:block hidden">
+                    <p className='font-medium text-xl text-white mb-2'>Social Links</p>
+                    <div className="gap-3 flex items-center">
                         <img src={xmail} alt="" />
                         <img src={linkedIn} alt="" />
                         <img src={facebook} alt="" />
