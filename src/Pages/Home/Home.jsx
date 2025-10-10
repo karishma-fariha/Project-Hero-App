@@ -1,13 +1,17 @@
 import React from 'react';
 import Apps from '../Apps/Apps';
 import { useLoaderData } from 'react-router';
+import Banner from '../../Component/Banner/Banner';
+import States from '../../Component/States/States';
 
 const Home = () => {
     const data = useLoaderData();
     console.log(data);
     return (
         <div>
-            <h1>Home</h1>
+            
+            <Banner></Banner>
+            <States></States>
             <Apps data={data}></Apps>
         </div>
     );

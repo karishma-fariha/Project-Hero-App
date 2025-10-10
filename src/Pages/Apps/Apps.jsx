@@ -3,11 +3,11 @@ import Card from '../Card/Card';
 // import { loadConfigFromFile } from 'vite';
 
 
-const Apps = ({}) => {
+const Apps = () => {
 
     return (
         <div>
-            <h1>hii</h1>
+            {/* <h1>hii</h1> */}
             {/* <Suspense fallback={load....}>
                 
                 {
