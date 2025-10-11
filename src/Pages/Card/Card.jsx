@@ -1,10 +1,12 @@
 import React from 'react';
 import download from "../../assets/icon-downloads.png";
 import ratings from "../../assets/icon-ratings.png"
+import { Link } from 'react-router';
 
 const Card = ({ singleCard }) => {
-    const {image,title,description,ratingAvg,downloads}=singleCard
+    const {image,title,description,ratingAvg,downloads,id}=singleCard
     return (
+       <Link to={`/cardDetails/${id}`}>
         <div className='bg-white shadow-sm rounded-xl p-4'>
             <div className="p-4 bg-gray-200 rounded-xl">
                 <img className='w' src={image} alt="" />
@@ -19,6 +21,7 @@ const Card = ({ singleCard }) => {
            
         </div>
         
+       </Link>
     );
 };
 
