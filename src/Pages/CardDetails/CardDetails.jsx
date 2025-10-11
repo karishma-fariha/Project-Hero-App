@@ -1,19 +1,40 @@
-import React from 'react';
+import React, { useState } from 'react';
 import download from "../../assets/icon-downloads.png";
 import ratings from "../../assets/icon-ratings.png"
 import { useLoaderData, useParams } from 'react-router';
 import review from "../../assets/icon-review.png";
+import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
 const CardDetails = () => {
     const { id } = useParams();
     const dataId = parseInt(id);
     const data = useLoaderData();
-    const singleData = data.find(app => app.id === dataId)
-    const { image, title, description, companyName, downloads,ratingAvg,reviews } = singleData;
+    const [installedApps, setInstalledApps] = useState(
+        JSON.parse(localStorage.getItem('installedApps')) || []
+    );
+
+    const singleData = data.find(app => app.id === dataId);
+    const isInstalled = installedApps.some(app => app.id === singleData.id);
+
+
+
+
+    const handleInstall = () => {
+        if (!isInstalled) {
+            const updated = [...installedApps, singleData];
+            setInstalledApps(updated);
+            localStorage.setItem('installedApps', JSON.stringify(updated));
+            alert(`${singleData.title} installed successfully!`);
+        }
+    };
+
+
+
+    const { image, title, description, companyName, downloads, ratingAvg, reviews, size } = singleData;
     return (
         <div className='bg-gray-100'>
-            <div className="flex p-20 gap-10">
+            <div className="flex p-20 pb-0 gap-10">
                 <div className="">
-                    <img className='h-[350px] w-[350px]' src={image} alt="" />
+                    <img className=' w-96 border object-cover' src={image} alt="" />
                 </div>
                 <div className="">
                     <div className="flex w-full flex-col">
@@ -38,11 +59,50 @@ const CardDetails = () => {
                             </div>
                         </div>
                         <div className="mt-8">
-                            <button className='ml-40 btn bg-[#00D390]'>Install Now (291 MB)</button>
+                            <button
+                                onClick={handleInstall}
+                                disabled={isInstalled}
+                                className='ml-40 btn bg-[#00D390]'>
+                                {isInstalled ? 'Installed' : `Install Now (${size} MB)`}
+
+                            </button>
+
                         </div>
                     </div>
 
                 </div>
+            </div>
+            <div className="">
+                {/* divider */}
+                <div className="divider mx-20"></div>
+                <div className=" bg-gray-100 p-6">
+                    <h2 className="text-2xl font-bold mb-6">Ratings</h2>
+                    <div style={{ width: '100%', height: 300 }}>
+                        <ResponsiveContainer>
+                            <BarChart layout="vertical" data={singleData.ratings} margin={{ top: 5, right: 20, left: 20, bottom: 5 }}>
+                                <CartesianGrid strokeDasharray="3 3" horizontal={false} />
+                                <XAxis
+                                    type="number"
+                                    tickFormatter={(value) => value}
+                                    tick={{ fill: '#6b7280' }}
+                                />
+                                <YAxis type="category" dataKey="name"
+                                    tick={{ fill: '#6b7280' }}
+                                    width={80} />
+                                <Tooltip cursor={{ fill: '#f3f4f6' }} />
+                                <Bar
+                                    dataKey="count" fill="#f59e0b"
+                                    barSize={25}
+                                />
+                            </BarChart>
+                        </ResponsiveContainer>
+                    </div>
+                </div>
+            </div>
+            <div className="divider mx-20"></div>
+            <div className="p-8">
+                <h1 className='text-2xl font-semibold '>Description</h1>
+                <p>{description}</p>
             </div>
 
 
