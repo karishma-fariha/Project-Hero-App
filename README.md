@@ -1,16 +1,30 @@
-# React + Vite
+#Project Title: Hero-App
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a modern React + Vite application built for fast and interactive web experiences.
+It uses a component-based structure and several popular tools to make development efficient and enjoyable.
 
-Currently, two official plugins are available:
+1.React is used for building the user interface with reusable components.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+2.Vite acts as the build tool, providing a fast development server and optimized production builds.
 
-## React Compiler
+3.React Router manages all the page navigation and data loading within the app.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+4.Tailwind CSS and DaisyUI handle the styling and ready-made UI components.
 
-## Expanding the ESLint configuration
+5.Recharts is used to display app rating data through responsive charts.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+6.React Toastify shows notifications when users install or uninstall apps.
+
+7.localStorage stores installed apps on the client side so that data remains even after refreshing or closing the tab.
+
+List of the Components/Library:
+ |
+  ------------------- 
+| **React**           |
+| **Vite**            |
+| **React Router**    |
+| **Tailwind CSS**    |
+| **DaisyUI**         |
+| **Recharts**        |
+| **React Toastify**  |
+| **localStorage**    |
