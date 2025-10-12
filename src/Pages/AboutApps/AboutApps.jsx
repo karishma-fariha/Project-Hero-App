@@ -8,7 +8,11 @@ const AboutApps = () => {
     const data = useLoaderData();
     const [search, setSearch] = useState('');
 
-    const filteredApp = data.filter(app => app.title.toLowerCase().includes(search.toLowerCase()));
+    const filteredApp = (data || []).filter(app =>
+        app.companyName.toLowerCase().includes(search.toLowerCase()) ||
+        app.title.toLowerCase().includes(search.toLowerCase())
+    );
+
 
 
     const handleClick = (id) => {

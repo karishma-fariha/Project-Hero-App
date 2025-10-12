@@ -6,6 +6,7 @@ import Home from '../Pages/Home/Home';
 import AboutApps from '../Pages/AboutApps/AboutApps';
 import CardDetails from '../Pages/CardDetails/CardDetails';
 import Installation from '../Pages/Installation/Installation';
+import ShowAll from '../Component/ShowAll/ShowAll';
 
 
 
@@ -35,6 +36,10 @@ export const router = createBrowserRouter([
           path: '/installation',
           loader: ()=>fetch('/allApps.json'),
           Component: Installation
+        },
+        {
+          path: '/aboutApps',
+          Component:ShowAll
         }
     ]
   },

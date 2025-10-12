@@ -12,10 +12,19 @@ const Banner = () => {
             <div className=" flex justify-center items-center gap-8 mb-6">
                <div className="flex btn">
                 <img src={googlePlay} alt="" />
-                 <button> Google Play</button></div>
+                 <a
+                  href="https://play.google.com/store/apps?hl=en"
+                    target="_blank"
+                    rel="noopener noreferrer"  
+                 > Google Play</a></div>
                <div className="flex btn">
                 <img src={appStore} alt="" />
-                 <button> App Store</button>
+                 <a
+                 href="https://www.apple.com/app-store/"
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                  
+                 > App Store</a>
                </div>
                
             </div>

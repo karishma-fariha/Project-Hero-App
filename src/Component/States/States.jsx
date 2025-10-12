@@ -11,14 +11,14 @@ const States = () => {
                     <p className='text-center md:text-xl font-normal text-white'>21% more than last month</p>
                 </div>
                 <div className="md:p-4">
-                    <p className='text-center md:text-xl font-normal text-white'>Total Downloads</p>
-                    <h1 className='text-center font-extrabold md:text-6xl text-4xl text-white'>29.6M</h1>
-                    <p className='text-center md:text-xl font-normal text-white'>21% more than last month</p>
+                    <p className='text-center md:text-xl font-normal text-white'>Total Reviews</p>
+                    <h1 className='text-center font-extrabold md:text-6xl text-4xl text-white'>906K</h1>
+                    <p className='text-center md:text-xl font-normal text-white'>46% more than last month</p>
                 </div>
                 <div className="md:p-4">
-                    <p className='text-center md:text-xl font-normal text-white'>Total Downloads</p>
-                    <h1 className='text-center font-extrabold md:text-6xl text-4xl text-white'>29.6M</h1>
-                    <p className='text-center md:text-xl font-normal text-white'>21% more than last month</p>
+                    <p className='text-center md:text-xl font-normal text-white'>Active Apps</p>
+                    <h1 className='text-center font-extrabold md:text-6xl text-4xl text-white'>132+</h1>
+                    <p className='text-center md:text-xl font-normal text-white'>31 more will Launch</p>
                 </div>
             </div>
         </div>

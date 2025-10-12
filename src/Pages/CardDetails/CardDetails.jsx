@@ -4,6 +4,7 @@ import ratings from "../../assets/icon-ratings.png"
 import { useLoaderData, useParams } from 'react-router';
 import review from "../../assets/icon-review.png";
 import { Bar, BarChart, CartesianGrid, ResponsiveContainer, Tooltip, XAxis, YAxis } from 'recharts';
+import { toast } from 'react-toastify';
 const CardDetails = () => {
     const { id } = useParams();
     const dataId = parseInt(id);
@@ -23,7 +24,7 @@ const CardDetails = () => {
             const updated = [...installedApps, singleData];
             setInstalledApps(updated);
             localStorage.setItem('installedApps', JSON.stringify(updated));
-            alert(`${singleData.title} installed successfully!`);
+            toast(`${singleData.title} installed successfully!`);
         }
     };
 
@@ -62,7 +63,7 @@ const CardDetails = () => {
                             <button
                                 onClick={handleInstall}
                                 disabled={isInstalled}
-                                className='ml-40 btn bg-[#00D390]'>
+                                className='ml-40 text-white btn bg-[#00D390]'>
                                 {isInstalled ? 'Installed' : `Install Now (${size} MB)`}
 
                             </button>

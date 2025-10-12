@@ -7,7 +7,7 @@ const Navbar = () => {
     const links = <>
         <Link to="/"><li className='mr-2 hover:text-indigo-500'>Home</li></Link>
         <Link to="/aboutApps"><li className='mr-2 hover:text-indigo-500'>Apps</li></Link>
-        <li className='mr-2 hover:text-indigo-500'>Installation</li>
+        <Link to='/installation'><li className='mr-2 hover:text-indigo-500'>Installation</li></Link>
     </>
     return (
         <div className="navbar bg-base-100 shadow-sm">
@@ -34,7 +34,11 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn text-white bg-linear-to-r from-[#632EE3] to-[#9F62F2]">
+                <a
+                    href="https://github.com/karishma-fariha"
+                    target="_blank"
+                    rel="noopener noreferrer" 
+                    className="btn text-white bg-linear-to-r from-[#632EE3] to-[#9F62F2]">
                     <img src={gitHubImg} alt="" /> Contribute</a>
             </div>
         </div>
